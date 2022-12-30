@@ -18,7 +18,7 @@ def distances(coordinates):
     duplicated_coordinates = duplicated_coordinates.permute(0, 2, 1)
 
     # shape [N, 3, N]
-    distances = torch.broadcast_shapes(coordinates.unsqueeze(-1), duplicated_coordinates.shape) - duplicated_coordinates
+    distances = torch.broadcast_to(coordinates.unsqueeze(-1), duplicated_coordinates.shape) - duplicated_coordinates
     # shape [N, 3, N] -> shape [N, N]
     distances = torch.sum(distances ** 2, dim = 1) ** 0.5
 
