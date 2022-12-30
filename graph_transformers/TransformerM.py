@@ -275,12 +275,11 @@ class TransformerMLayer(nn.Module):
 
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, node_feat, edge_index, max_path_len, edge_feat = None, attention_mask = None):
+    def forward(self, node_feat, edge_index, distances, num_edge_types, max_path_len, edge_type, edge_feat = None, attention_mask = None):
         # 1st Residual Connection: x = MHA(LN(x)) + x
         x_init = node_feat
         x = self.multihead_attention_layer_norm(node_feat)
-        #def forward(self, node_feat, edge_index, max_path_len, edge_feat = None, attention_mask = None):        
-        x = self.MultiHeadAttention_layer(x, edge_index, max_path_len, edge_feat, attention_mask)
+        x = self.MultiHeadAttention_layer(x, edge_index, distances, num_edge_types, max_path_len, edge_type, edge_feat, attention_mask)
         x = self.dropout(x)
         x = x + x_init
 
