@@ -3,7 +3,9 @@ Implementation of Transformers for Graph in Pytorch.
 
 # Table of Contents
 
+[Graph Transformer](#Graph Transformer)
 [Graphormer](#Graphormer)
+[Transformer-M](#Transformer-M)
 
 ## Graphormer
 
