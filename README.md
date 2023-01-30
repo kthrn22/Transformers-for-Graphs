@@ -1,7 +1,9 @@
 # Transformers for Graph
 Implementation of Transformers for Graph in Pytorch. 
 
+# Table of Contents
 
+[Graphormer](#Graphormer)
 
 ## Graphormer
 
