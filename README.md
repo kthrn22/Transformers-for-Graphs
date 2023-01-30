@@ -1,4 +1,7 @@
-# Transformers for Graphs
+# Transformers for Graph
+Implementation of Transformers for Graph in Pytorch. 
+
+
 
 ## Graphormer
 
@@ -44,7 +47,7 @@ Optional. Shape [E, edge_in_dim]
 Shape: [N, N]. Invalid positions are assigned with non-zero values in attention_mask
 
 ### Example
-```
+```python
 import torch.nn as nn
 import torch
 import numpy as np
